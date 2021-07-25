@@ -1,4 +1,4 @@
-# pos
+# dashboard
 
 ## Project setup
 ```

@@ -14,7 +14,7 @@ export default new VueRouter ({
       component: Home
     },
     {
-      name: 'pos',
+      name: 'stock',
       path: '/stock', 
       component: Stock, 
     }

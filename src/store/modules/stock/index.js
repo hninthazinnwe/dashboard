@@ -25,7 +25,7 @@ const actions= {
     })
     .catch(error => console.log(error.response));
   },
-  async saveStock(payload) {
+  async saveStock({dispatch},payload) {
     await Axios.post('https://kopwar.com.mm/webapp/api/new_api/api-create.php', {
         "name": payload.name,
         "price": payload.price
@@ -34,8 +34,9 @@ const actions= {
       // 
     })
     .catch(error => console.log(error.response));
+    dispatch('getStockList')
   },
-  async updateStock(payload) {
+  async updateStock({dispatch},payload) {
     var url = '	https://kopwar.com.mm/webapp/api/new_api/api-update.php'
     await Axios.put(url, {
       "id": payload.product_id,
@@ -46,6 +47,7 @@ const actions= {
       // 
     })
     .catch(error => console.log(error.response));
+    dispatch('getStockList')
   },
   async deleteStock({dispatch}, payload) {
     var url = 'https://kopwar.com.mm/webapp/api/new_api/api-delete.php'
